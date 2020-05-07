@@ -1,0 +1,20 @@
+<div class="row" *ngIf="!search_results" class="text-center text-center-warning">
+    <img src="/assets/images/loading.gif" alt="">
+</div>
+
+<div class="row" *ngIf="search_results">
+    <h3 class="text-primary">Showing {{ search_results.totalResults }} results</h3>
+</div>
+
+<div class="row" *ngIf="search_results">
+    <div class="card col-md-4 col-sm-6 col-xs-12" *ngFor="let s of search_results.Search">
+        <div class="alert alert-primary clickable"
+            [routerLink]="['/details/', s.imdbID]">
+            <div class="card-body">
+                <h5>{{ s.Title }}</h5>
+                <p>{{ s.Year }}</p>
+                <img [src]="s.Poster" [alt]="s.Title" class="card-img">
+            </div>
+        </div>
+    </div>
+</div>

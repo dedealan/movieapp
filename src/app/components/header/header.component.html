@@ -1,0 +1,12 @@
+<div class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <span class="navbar-brand clickable" [routerLink]="['/']">MovieApp</span>
+    
+    <form (submit)="submitHandler($event)" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="s" type="text"
+        autocomplete="off"
+        autofocus
+        [value]="queryTerm"
+        [(ngModel)]="queryTerm"
+        placeholder="Search">
+    </form>
+</div>
